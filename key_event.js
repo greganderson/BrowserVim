@@ -6,6 +6,8 @@ trigger_key_j = 106; // j
 trigger_key_k = 107; // k
 trigger_key_g = 103; // g
 trigger_key_G = 71; // G
+trigger_key_d = 100; // d
+trigger_key_u = 117; // u
 function doKeyPress(e){
 	// Make sure the user isn't in a text box trying to type
 	if (document.activeElement.nodeName == 'TEXTAREA' || document.activeElement.nodeName == 'INPUT') {
@@ -26,6 +28,14 @@ function doKeyPress(e){
 	// Scroll to bottom
 	else if (e.keyCode == trigger_key_G) {
 		window.scrollTo(0,document.body.scrollHeight);
+	}
+	// Scroll half a screen down
+	else if (e.keyCode == trigger_key_d) {
+		window.scrollBy(0,window.innerHeight/2);
+	}
+	// Scroll half a screen up
+	else if (e.keyCode == trigger_key_u) {
+		window.scrollBy(0,window.innerHeight/(-2));
 	}
 	else {
 		alert(e.keyCode);
