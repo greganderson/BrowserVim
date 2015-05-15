@@ -5,6 +5,10 @@ if (window == top) {
 trigger_key_j = 106; // j key
 trigger_key_k = 107; // k key
 function doKeyPress(e){
+	// Make sure the user isn't in a text box trying to type
+	if (document.activeElement.nodeName == 'TEXTAREA' || document.activeElement.nodeName == 'INPUT') {
+		return;
+	}
 	if (e.keyCode == trigger_key_j){
 		window.scrollBy(0,50);
 	}
