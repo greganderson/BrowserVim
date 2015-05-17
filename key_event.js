@@ -10,7 +10,6 @@ trigger_key_d = 100; // d
 trigger_key_u = 117; // u
 trigger_key_n = 110; // n
 trigger_key_forward_slash = 47;
-var searching = false;
 var keyword = null;
 
 function doKeyPress(e){
