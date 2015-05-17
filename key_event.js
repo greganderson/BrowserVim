@@ -4,6 +4,8 @@ if (window == top) {
  
 trigger_key_j = 106; // j
 trigger_key_k = 107; // k
+trigger_key_l = 108; // l
+trigger_key_h = 104; // h
 trigger_key_g = 103; // g
 trigger_key_G = 71; // G
 trigger_key_d = 100; // d
@@ -25,6 +27,14 @@ function doKeyPress(e){
 	else if (e.keyCode == trigger_key_k) {
 		window.scrollBy(0,-50);
 	}
+    // Scroll right
+    else if (e.keyCode == trigger_key_l) {
+        window.scrollBy(50, 0);
+    }
+    // Scroll left
+    else if (e.keyCode == trigger_key_h) {
+        window.scrollBy(-50, 0);
+    }
 	// Scroll to top
 	else if (e.keyCode == trigger_key_g) {
 		window.scrollTo(0,0);
