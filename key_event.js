@@ -10,6 +10,9 @@ trigger_key_d = 100; // d
 trigger_key_u = 117; // u
 trigger_key_n = 110; // n
 trigger_key_forward_slash = 47;
+var searching = false;
+var keyword = null;
+
 function doKeyPress(e){
 	// Make sure the user isn't in a text box trying to type
 	if (document.activeElement.nodeName == 'TEXTAREA' || document.activeElement.nodeName == 'INPUT') {
@@ -40,8 +43,14 @@ function doKeyPress(e){
 		window.scrollBy(0,window.innerHeight/(-2));
 	}
     else if (e.keyCode == trigger_key_forward_slash) {
-        var keyword = window.prompt("Search");
-        while (window.find(keyword, false, true)){};
+        keyword = window.prompt("Search");
+        window.find(keyword, false, false);
+    }
+    else if (e.keyCode == trigger_key_n) {
+        if(!window.find(keyword, false, false)) {
+            while (window.find(keyword, false, true)){
+            };
+        }
     }
 	else {
 		alert(e.keyCode);
