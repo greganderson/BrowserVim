@@ -8,6 +8,8 @@ trigger_key_g = 103; // g
 trigger_key_G = 71; // G
 trigger_key_d = 100; // d
 trigger_key_u = 117; // u
+trigger_key_n = 110; // n
+trigger_key_forward_slash = 47;
 function doKeyPress(e){
 	// Make sure the user isn't in a text box trying to type
 	if (document.activeElement.nodeName == 'TEXTAREA' || document.activeElement.nodeName == 'INPUT') {
@@ -37,6 +39,10 @@ function doKeyPress(e){
 	else if (e.keyCode == trigger_key_u) {
 		window.scrollBy(0,window.innerHeight/(-2));
 	}
+    else if (e.keyCode == trigger_key_forward_slash) {
+        var keyword = window.prompt("Search");
+        while (window.find(keyword, false, true)){};
+    }
 	else {
 		alert(e.keyCode);
 	}
